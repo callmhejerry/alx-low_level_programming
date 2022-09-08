@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * main - Prints out to the staandard error 
+ * main - Prints out to the staandard error
  * Return: 1 successful
  */
 int main(void)
