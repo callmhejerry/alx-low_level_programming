@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -mtune=intel -S $CFILE
+gcc -march=native -S $CFILE
