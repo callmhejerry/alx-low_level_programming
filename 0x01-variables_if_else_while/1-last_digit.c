@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <std.io>
+#include <stdio.h>
 #include <time.h>
 /**
  * main - A function to print the last random digit
