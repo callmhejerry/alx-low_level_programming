@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 /**
  * main - this function checks if a random number is positive or negative
