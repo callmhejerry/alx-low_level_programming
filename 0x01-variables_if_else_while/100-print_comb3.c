@@ -28,6 +28,7 @@ int main(void)
 		if (numb == 57)
 		{
 			numa++;
+			numb = 48;
 		}
 		numb++;
 	}
