@@ -17,17 +17,17 @@ int main(void)
 		{
 			putchar(numa);
 			putchar(numb);
+			if (numb == 57 && numa == 57)
+				putchar('\n');
+			else
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
 		if (numb == 57)
 		{
 			numa++;
-		}
-		if (numb == 57 && numa == 57)
-			putchar('\n');
-		else
-		{
-			putchar(',');
-			putchar(' ');
 		}
 		numb++;
 	}
