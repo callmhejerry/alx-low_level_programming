@@ -6,30 +6,30 @@
  */
 int main(void)
 {
-	int num1;
-	int num2;
+	int numa;
+	int numb;
 
-	num1 = 48;
-	num2 = 48;
-	while (num1 <= 57)
+	numa = 48;
+	numb = 48;
+	while (numa <= 57)
 	{
-		if (num2 != num1)
+		if (numb != numa)
 		{
-			putchar(num1);
-			putchar(num2);
+			putchar(numa);
+			putchar(numb);
 		}
-		if (num2 == 57)
+		if (numb == 57)
 		{
-			num1++;
+			numa++;
 		}
-		if (num2 == 57 && num1 == 57)
+		if (numb == 57 && numa == 57)
 			putchar('\n');
 		else
 		{
 			putchar(',');
 			putchar(' ');
 		}
-		num2++;
+		numb++;
 	}
 	return (0);
 }
