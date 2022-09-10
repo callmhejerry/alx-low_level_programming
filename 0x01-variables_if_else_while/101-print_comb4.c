@@ -16,7 +16,7 @@ int main(void)
 	numc = 48;
 	while (numa < 57)
 	{
-		if (numc > numb > numa)
+		if (numc > numb && numb > numa)
 		{
 			putchar(numa);
 			putchar(numb);
