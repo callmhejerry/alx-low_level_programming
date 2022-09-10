@@ -35,7 +35,10 @@ int main(void)
 			numc = 48;
 		}
 		if (numb == 57)
+		{
 			numa++;
+			numb = 48;
+		}
 		numc++;
 	}
 	return (0);
