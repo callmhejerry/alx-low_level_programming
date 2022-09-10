@@ -21,7 +21,7 @@ int main(void)
 			putchar(numa);
 			putchar(numb);
 			putchar(numc);
-			if (numa + 1 == numb)
+			if (numa + 2 == 57)
 				putchar('\n');
 			else
 			{
