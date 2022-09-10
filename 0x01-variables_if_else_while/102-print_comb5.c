@@ -18,7 +18,7 @@ int main(void)
 	d = 48;
 	while (a <= 57)
 	{
-		if ((a + b) <= (c + d))
+		if ((c + d) >= (a + b))
 		{
 			putchar(a);
 			putchar(b);
