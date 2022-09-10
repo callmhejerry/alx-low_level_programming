@@ -17,13 +17,6 @@ int main(void)
 		{
 			putchar(numa);
 			putchar(numb);
-			if ((numb + 1) == 57 && (numa + 1) == 57)
-				putchar('\n');
-			else
-			{
-				putchar(',');
-				putchar(' ');
-			}
 		}
 		if (numb == 57)
 		{
@@ -31,6 +24,13 @@ int main(void)
 			numb = 48;
 		}
 		numb++;
+		if (numa > numb)
+			putchar('\n');
+		else
+		{
+			putchar(',');
+			putchar(' ');
+		}
 	}
 	return (0);
 }
