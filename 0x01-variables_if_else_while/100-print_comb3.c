@@ -17,7 +17,7 @@ int main(void)
 		{
 			putchar(numa);
 			putchar(numb);
-			if (numb == 57 && numa == 57)
+			if ((numb + 1) == 57 && (numa + 1) == 57)
 				putchar('\n');
 			else
 			{
