@@ -27,13 +27,13 @@ int main(void)
 				putchar(' ');
 				putchar(c);
 				putchar(d);
-			}
-			if ((a + 1) > 57 && (b + 1) > 57)
-				putchar('\n');
-			else
-			{
-				putchar(',');
-				putchar(' ');
+				if((a + 1) > 57 && (b + 1) > 57)
+					putchar('\n');
+				else
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 		if (d == 57 && c == 57)
