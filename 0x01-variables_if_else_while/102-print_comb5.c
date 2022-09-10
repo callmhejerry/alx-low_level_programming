@@ -33,7 +33,7 @@ int main(void)
 				putchar(' ');
 			}
 		}
-		if (d == 57)
+		if (d == 57 && c != 57)
 		{
 			c++;
 			d = 48;
