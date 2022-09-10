@@ -20,11 +20,14 @@ int main(void)
 	{
 		if ((c + d) >= (a + b))
 		{
-			putchar(a);
-			putchar(b);
-			putchar(' ');
-			putchar(c);
-			putchar(d);
+			if (a != c && b != d)
+			{
+				putchar(a);
+				putchar(b);
+				putchar(' ');
+				putchar(c);
+				putchar(d);
+			}
 			if ((a + 1) > 57 && (b + 1) > 57)
 				putchar('\n');
 			else
