@@ -37,6 +37,7 @@ int main(void)
 		{
 			b++;
 			c = 48;
+			d = 48;
 		}
 		if (d == 57)
 		{
