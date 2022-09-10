@@ -1,57 +1,73 @@
 #include <stdio.h>
 
-/**
- * main - print all 4 combinations of
- * a base10 number
- * Return: 0 successful
- */
-int main(void)
-{
-	int a;
-	int b;
-	int c;
-	int d;
 
-	a = 48;
-	b = 48;
-	c = 48;
-	d = 48;
-	while (a <= 57)
+
+/**
+ *
+ * * main - loop through variables a,b,c printing digits
+ *
+ * *
+ *
+ * * Return: print to stdout all possible different combinations of three digits
+ *
+ * **/
+
+int main(void)
+
+{
+
+	int a = 0;
+
+	int b;
+
+
+
+	while (a <= 98)
+
 	{
-		if ((c + d) >= (a + b))
+
+		b = a + 1;
+
+		while (b <= 99)
+
 		{
-			if (a != c || b != d)
+
+			putchar(a / 10 % 10 + '0');
+
+			putchar(a % 10 + '0');
+
+			putchar(' ');
+
+			putchar(b / 10 % 10 + '0');
+
+			putchar(b % 10 + '0');
+
+			if (a == 98 && b == 99)
+
 			{
-				putchar(a);
-				putchar(b);
-				putchar(' ');
-				putchar(c);
-				putchar(d);
-				if((a + 1) > 57 && (b + 1) == 57)
-					putchar('\n');
-				else
-				{
-					putchar(',');
-					putchar(' ');
-				}
+
+				putchar('\n');
+
 			}
-		}
-		if (d == 57 && c == 57)
-		{
+
+			else
+
+			{
+
+				putchar(',');
+
+				putchar(' ');
+
+			}
+
 			b++;
-			c = 48;
-			d = 48;
+
 		}
-		if (d == 57)
-			c++;
-		if (b == 57)
-		{
-			a++;
-			b = 48;
-		}
-		d++;
-		if (d > 57)
-			d = 48;
+
+		a++;
+
 	}
+
 	return (0);
+
 }
