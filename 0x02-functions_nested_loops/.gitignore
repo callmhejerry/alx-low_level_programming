@@ -1,0 +1,4 @@
+*.o
+*.h
+_putchar.c
+
