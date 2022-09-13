@@ -13,6 +13,9 @@ void times_table(void)
 	b = 0;
 	while (a <= 9)
 	{
+		_putchar(b + '0');
+		_putchar(',');
+		b = 1;
 		while (b <= 9)
 		{
 			count = a * b;
