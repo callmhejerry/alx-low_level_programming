@@ -16,37 +16,22 @@ void times_table(void)
 		while (b <= 9)
 		{
 			count = a * b;
-			if (b == 9)
+			if (count > 9)
 			{
-				if (count > 9)
-				{
-					_putchar(count / 10 + '0');
-					_putchar(count % 10 + '0');
-					_putchar('\n');
-				}
-				else
-				{
-					_putchar(' ');
-					_putchar(count);
-					_putchar('\n');
-				}
+				_putchar(count / 10 + '0');
+				_putchar(count % 10 + '0');
 			}
 			else
 			{
-				if (count > 9)
-				{
-					_putchar(count / 10 + '0');
-					_putchar(count % 10 + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar(' ');
-					_putchar(count);
-					_putchar(',');
-					_putchar(' ');
-				}
+				_putchar(' ');
+				_putchar(count + '0');
+			}
+			if (b == 9)
+				_putchar('\n');
+			else
+			{
+				_putchar(',');
+				_putchar(' ');
 			}
 			b++;
 		}
