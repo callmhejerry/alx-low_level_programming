@@ -27,4 +27,5 @@ int main(void)
 		b = c;
 		count++;
 	}
+	return (0);
 }
