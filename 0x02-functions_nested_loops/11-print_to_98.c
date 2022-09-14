@@ -20,7 +20,7 @@ void greater_than_98(int n)
 		else
 		{
 			_putchar(n / 10 + '0');
-			_putcahr(n % 10 + '0');
+			_putchar(n % 10 + '0');
 		}
 		if (n == 98)
 			_putchar('\n');
