@@ -14,7 +14,7 @@ int main(void)
 
 	a = 1;
 	b = 2;
-	count = 0;
+	count = 1;
 	printf("%li, %li, ", a, b);
 	while (count <= 50)
 	{
