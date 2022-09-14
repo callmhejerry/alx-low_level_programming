@@ -24,5 +24,6 @@ int main(void)
 		a = b;
 		b = c;
 	}
+	printf("%li\n", sum);
 	return (0);
 }
