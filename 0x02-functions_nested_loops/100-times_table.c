@@ -51,13 +51,13 @@ void print_times_table(int n)
 	int b;
 	int count;
 
-	if (n > 15 || n < 0)
-		return;
 	if (n == 0)
 	{
 		_putchar('0');
 		_putchar('\n');
 	}
+	if (n > 15 || n < 0)
+		return;
 	for (a = 0; a <= n; a++)
 	{
 		b = 0;
