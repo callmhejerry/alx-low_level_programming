@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 /**
- * main - print the sum of the multiples
+ * multiples - returns the multiples
  * of 3 or 5
- * Return: 0 success
+ * Return: the sum of the multiples of
+ * 3 or 5
  */
-int main(void)
+int multiples(void)
 {
 	int count;
 
@@ -15,7 +16,29 @@ int main(void)
 		if ((i % 3 == 0) || (i % 5 == 0))
 			count += i;
 	}
-	putchar(count + '0');
+	if (count > 99)
+	{
+		putchar((count / 10) / 10 + '0');
+		putchar((count / 10) % 10 + '0');
+		putchar(count % 10 + '0');
+	}
+	else if (count > 9)
+	{
+		putchar(count / 10 + '0');
+		putchar(count % 10 + '0');
+	}
+	else
+		putchar(count + '0');
 	putchar('\n');
+	return (count);
+}
+/**
+ * main - print the sum of the multiples
+ * of 3 or 5
+ * Return: 0 success
+ */
+int main(void)
+{
+	multiples();
 	return (0);
 }
