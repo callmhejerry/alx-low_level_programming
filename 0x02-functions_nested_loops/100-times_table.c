@@ -52,8 +52,12 @@ void print_times_table(int n)
 	int count;
 
 	if (n > 15 || n < 0)
-		return ;
-	
+		return;
+	if (n == 0)
+	{
+		_putchar('0');
+		_putchar('\n');
+	}
 	for (a = 0; a <= n; a++)
 	{
 		b = 0;
