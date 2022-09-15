@@ -20,7 +20,7 @@ void more_numbers(void)
 			int rem, act;
 
 			rem = b % 10;
-			act = a / 10;
+			act = b / 10;
 			if (act > 0)
 				_putchar(act + '0');
 			_putchar(rem + '0');
