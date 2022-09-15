@@ -12,6 +12,7 @@ void print_triangle(int size)
 	{
 		int i;
 		int j;
+		int k;
 
 		i = 1;
 		while (i <= size)
@@ -21,8 +22,12 @@ void print_triangle(int size)
 			{
 				if (j <= i)
 				{
-					for (int k = 1; k <= j; k++)
+					k = 1;
+					while (k <= j)
+					{
 						_putchar('#');
+						k++;
+					}
 				}
 				else
 					_putchar(' ');
