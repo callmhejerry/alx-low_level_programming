@@ -22,7 +22,7 @@ int main(void)
 			h3 = a1 + a2 + h1;
 			a1 = a2, a2 = h3;
 			b1 = b2, b2 = h2;
-			printf("%lu%lu010lu", a2, b2);
+			printf("%lu%lu", a2, b2);
 		}
 		else
 		{
