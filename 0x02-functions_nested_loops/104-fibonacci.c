@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define LARGE 10000000000
 
 /**
  * main - prints the fibonacci sequence frm
@@ -7,25 +8,31 @@
  */
 int main(void)
 {
-	long a;
-	long b;
-	long c;
+	unsigned long int a1 = 0, b1 = 1, a2 = 0, b2 = 2;
+	unsigned long int h1, h2, h3;
 	int count;
 
-	a = 1;
-	b = 2;
-	count = 3;
-	printf("%li, %li, ", a, b);
-	while (count <= 98)
+	printf("%lu, %lu, ", b1, b2);
+	for (count = 2; count < 98; count++)
 	{
-		c = a + b;
-		if (count == 98)
-			printf("%li\n", c);
+		if (b1 + b2 > LARGE || a2 > 0 || a1 > 0)
+		{
+			h1 = (b1 + b2) / LARGE;
+			h2 = (b1 + b2) % LARGE;
+			h3 = a1 + a2 + h1;
+			a1 = a2, a2 = h3;
+			b1 = b2, b2 = h2;
+			printf("%lu%lu010lu", a2, b2);
+		}
 		else
-			printf("%li, ", c);
-		a = b;
-		b = c;
-		count++;
+		{
+			h2 = b1 + b2;
+			b1 = b2, b2 = h2;
+			printf("%lu", b2);
+		}
+		if (count != 97)
+			printf(", ");
 	}
+	printf("\n");
 	return (0);
 }
