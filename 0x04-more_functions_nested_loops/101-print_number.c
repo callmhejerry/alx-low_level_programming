@@ -29,7 +29,7 @@ void print_number(int n)
 		b = 10;
 		while (n / b >= 9)
 			b = b * 10;
-		while (b <= 1)
+		while (b >= 1)
 		{
 			z = n / b;
 			n = n % b;
