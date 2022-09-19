@@ -11,7 +11,6 @@ void rev_string(char *s)
 	int num;
 	int len;
 	int check;
-	char ch;
 
 	len = 0;
 	num = 0;
@@ -19,13 +18,19 @@ void rev_string(char *s)
 	{
 		len++;
 	}
-	check = len;
+	check = len - 1;
+	char ch[len];
+
 	while (num < len)
 	{
-		ch = *(s + num);
-		*(s + num) = *(s + (check - 1));
-		*(s + (check - 1)) = ch;
-		check--;
+		ch[num] = *(s + num);
 		num++;
+	}
+	num = 0
+	while (num < len)
+	{
+		s[num] = ch[check];
+		num++;
+		check--;
 	}
 }
