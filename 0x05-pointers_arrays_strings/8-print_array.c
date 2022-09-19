@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
  * print_array - A function that prints all the
@@ -16,10 +15,11 @@ void print_array(int *a, int n)
 	count = 0;
 	while (count < n)
 	{
-		if (count == n - 1)
-			printf("%d\n", *(a + count));
-		else
-			printf("%d, ", *(a + count));
+		printf("%d", *(a + count));
 		count++;
+		if (count == n)
+			printf("\n");
+		else
+			printf(", ");
 	}
 }
