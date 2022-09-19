@@ -23,8 +23,8 @@ void rev_string(char *s)
 	while (num < len)
 	{
 		ch = *(s + num);
-		s[num] = *(s + (check - 1));
-		s[check - 1] = ch;
+		*(s + num) = *(s + (check - 1));
+		*(s + (check - 1)) = ch;
 		check--;
 		num++;
 	}
