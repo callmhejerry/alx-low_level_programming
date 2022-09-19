@@ -19,14 +19,14 @@ void rev_string(char *s)
 		len++;
 	}
 	check = len - 1;
-	char ch[len];
+	char ch[];
 
 	while (num < len)
 	{
 		ch[num] = *(s + num);
 		num++;
 	}
-	num = 0
+	num = 0;
 	while (num < len)
 	{
 		s[num] = ch[check];
