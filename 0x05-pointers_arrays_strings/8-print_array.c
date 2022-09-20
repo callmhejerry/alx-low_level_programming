@@ -14,13 +14,20 @@ void print_array(int *a, int n)
 	int count;
 
 	count = 0;
-	while (count < n)
+	if (n > 0)
 	{
-		printf("%d", *(a + count));
-		count++;
-		if (count == n)
-			printf("\n");
-		else
-			printf(", ");
+		while (count < n)
+		{
+			printf("%d", *(a + count));
+			count++;
+			if (count == n)
+				printf("\n");
+			else
+				printf(", ");
+		}
 	}
+	else if (n == 0)
+		printf("%d\n", *(a));
+	else
+		return;
 }
