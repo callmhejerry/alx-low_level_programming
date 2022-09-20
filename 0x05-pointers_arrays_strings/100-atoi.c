@@ -28,7 +28,7 @@ int _atoi(char *s)
 		count++;
 		tens = 10;
 	}
-	if (minus % 2 == 1)
+	if (minus % 2 == 1 && digit > 0)
 		digit = -1 * digit;
 	return (digit);
 }
