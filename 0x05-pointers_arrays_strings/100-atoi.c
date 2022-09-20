@@ -16,7 +16,7 @@ int _atoi(char *s)
 	count = 0;
 	tens = 1;
 	digit = 0;
-	while (*(s + count) > '9' || *(s + count) < '0')
+	while ((*(s + count) > '9' || *(s + count) < '0') && *(s + count) != '\0')
 	{
 		if (*(s + count) == '-')
 			minus++;
