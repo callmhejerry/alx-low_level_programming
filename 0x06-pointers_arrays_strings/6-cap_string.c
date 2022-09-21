@@ -31,14 +31,14 @@ char *cap_string(char *str)
 				str[len] = str[len] - 32;
 			len++;
 		}
-		else if (str[len] >= 'A' && str[len] <= 'Z')
+		/*else if (str[len] >= 'A' && str[len] <= 'Z')
 		{
 			if (str[len - 1] >= 'A' && str[len - 1] <= 'Z')
 				str[len] = str[len] + 32;
 			if (str[len - 1] >= 'a' && str[len - 1] <= 'z')
 				str[len] = str[len] + 32;
 			len++;
-		}
+		}*/
 		else if (str[len] == '\t')
 			str[len] = ' ';
 		else
