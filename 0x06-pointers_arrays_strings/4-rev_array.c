@@ -1,4 +1,3 @@
-#include "main.h"
 
 /**
  * reverse_array - A function that reverses the content
