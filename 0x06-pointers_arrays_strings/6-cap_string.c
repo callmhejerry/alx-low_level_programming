@@ -39,8 +39,8 @@ char *cap_string(char *str)
 				str[len] = str[len] + 32;
 			len++;
 		}*/
-		else if (str[len] == '\t')
-			str[len] = ' ';
+		/*else if (str[len] == '\t')
+			str[len] = ' ';*/
 		else
 			len++;
 	}
