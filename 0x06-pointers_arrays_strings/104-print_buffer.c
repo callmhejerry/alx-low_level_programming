@@ -10,7 +10,7 @@
 
 void print_buffer(char *b, int size)
 {
-	int num, a, c;
+	int num, a, c, i;
 
 	if (size % 10 == 0)
 		num = size / 10;
@@ -19,7 +19,8 @@ void print_buffer(char *b, int size)
 	else
 		num = 0;
 	a = 0;
-	for (int i = 1; i <= num; i++)
+	i = 1;
+	while (i <= num)
 	{
 		c = a;
 		printf("%08x: ", a);
@@ -31,7 +32,7 @@ void print_buffer(char *b, int size)
 			if ((a + 1) % 2 == 0)
 				printf(" ");
 			a++;
-		} while (a % 10 != 0)
+		} while (a % 10 != 0);
 		do {
 			if (c < size)
 			{
@@ -43,6 +44,7 @@ void print_buffer(char *b, int size)
 			c++;
 		} while (c % 10 != 0);
 		printf("\n");
+		i++;
 	}
 	if (size <= 0)
 		printf("\n");
