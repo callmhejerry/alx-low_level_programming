@@ -8,16 +8,16 @@
  */
 void print_number(int n)
 {
-	int tens, num;
+	unsigned int tens, num;
 
 	tens = 1;
-	while (n / tens > 9 || n / tens < -9)
-		tens *= 10;
 	if (n < 0)
 	{
 		_putchar('-');
 		n *= -1;
 	}
+	while (n / tens > 9)
+		tens *= 10;
 	while (tens >= 1)
 	{
 		num = (n / tens) % 10;
