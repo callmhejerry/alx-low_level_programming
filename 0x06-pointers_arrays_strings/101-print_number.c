@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	unsigned int tens, num;
+	int tens, num;
 
 	tens = 1;
 	while (n / tens > 9 || n / tens < -9)
