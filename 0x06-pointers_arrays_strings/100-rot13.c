@@ -7,27 +7,20 @@
 char *rot13(char *str)
 {
 	int i, j;
-	char small[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'l'
-		, 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w'
-			, 'x', 'y', 'z'};
-	char cap[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'
-		, 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'
-			, 'V', 'W', 'X', 'Y', 'Z'};
-
+	char small[52] = {'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E'
+	       , 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K'
+	       , 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'r', 'R', 's', 'S'
+	       , 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y'
+	       , 'z', 'Z'};
 	i = 0;
 	while (str[i] != '\0')
 	{
 		j = 0;
-		while (j < 26)
+		while (j < 52)
 		{
 			if (str[i] == small[j])
 			{
-				str[i] = small[(j + 13) % 26];
-				break;
-			}
-			else if (str[i] == cap[j])
-			{
-				str[i] = cap[(j + 13) % 26];
+				str[i] = small[(j + 13 * 2) % 52];
 				break;
 			}
 			j++;
