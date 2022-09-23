@@ -37,7 +37,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		e = r[c];
 		r[c] = r[d];
-		r[d] = m;
+		r[d] = e;
 	}
 	return (r);
 }
