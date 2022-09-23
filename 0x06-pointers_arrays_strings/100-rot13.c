@@ -9,6 +9,7 @@ char *rot13(char *str)
 	int i, j;
 	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+
 	i = 0;
 	while (str[i] != '\0')
 	{
