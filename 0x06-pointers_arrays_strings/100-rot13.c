@@ -7,20 +7,17 @@
 char *rot13(char *str)
 {
 	int i, j;
-	char small[52] = {'a', 'A', 'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E'
-	       , 'f', 'F', 'g', 'G', 'h', 'H', 'i', 'I', 'j', 'J', 'k', 'K'
-	       , 'l', 'L', 'm', 'M', 'n', 'N', 'o', 'O', 'r', 'R', 's', 'S'
-	       , 't', 'T', 'u', 'U', 'v', 'V', 'w', 'W', 'x', 'X', 'y', 'Y'
-	       , 'z', 'Z'};
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	i = 0;
 	while (str[i] != '\0')
 	{
 		j = 0;
-		while (j < 52)
+		while (a[j] != '\0')
 		{
-			if (str[i] == small[j])
+			if (str[i] == a[j])
 			{
-				str[i] = small[(j + 13 * 2) % 52];
+				str[i] = b[j];
 				break;
 			}
 			j++;
