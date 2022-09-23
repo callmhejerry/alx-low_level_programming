@@ -29,6 +29,8 @@ char *cap_string(char *str)
 				str[len] = str[len] - 32;
 			if (str[len - 1] == '}')
 				str[len] = str[len] - 32;
+			if (len == 0)
+				str[len] = str[len] - 32;
 			len++;
 		}
 		else
