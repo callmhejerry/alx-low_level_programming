@@ -25,7 +25,7 @@ char *rot13(char *str)
 				str[i] = small[(j + 13) % 26];
 				break;
 			}
-			else if (str[i] == cap[j])
+			else
 			{
 				str[i] = cap[(j + 13) % 26];
 				break;
