@@ -24,7 +24,6 @@ char *_strstr(char *haystack, char *needle)
 						 && haystack[i] != '\0')
 				{
 					return (0);
-					break;
 				}
 				i++;
 				j++;
