@@ -3,7 +3,7 @@
  * to memory area dest
  * @dest: the pointer to the memory we want to copy to
  * @src: the pointer to the memory we are copying from
- * n: the number of bytes to copy from src
+ * @n: the number of bytes to copy from src
  *
  * Return: the pointer to the memory we copied to
  */
