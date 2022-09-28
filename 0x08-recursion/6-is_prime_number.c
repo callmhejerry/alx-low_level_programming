@@ -1,4 +1,3 @@
-int a = 2;
 /**
  * is_prime_number - A function that checks for a prime number
  * @n: the number to check
