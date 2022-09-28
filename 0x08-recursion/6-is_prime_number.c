@@ -8,20 +8,14 @@ int a = 2;
 int is_prime_number(int n)
 {
 	if (n <= 1)
-	{
-		a = 2;
 		return (0);
-	}
-	if (a != n && n % a == 0)
-	{
-		a = 2;
+	if (n == 2)
 		return (0);
-	}
-	else if (a == n)
-	{
-		a = 2;
+	else if (n % 3 == 0 || n % 5 == 0)
+		return (0);
+	else if (n % 7 == 0 || n % 2 == 0)
+		return (0);
+	else
 		return (1);
-	}
-	a++;
 	return (is_prime_number(n));
 }
