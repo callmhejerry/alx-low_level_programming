@@ -1,5 +1,5 @@
 /**
- * _sqr_recursion - A function that returns the natural square root of a number
+ * _sqrt_recursion - A function that returns the natural square root of a number
  * @n: the number to find the square root of
  *
  * Return: the square root of n
@@ -8,6 +8,7 @@
 int _sqrt_recursion(int n)
 {
 	int num;
+
 	if (n % 4 == 0)
 		num = 2 * _sqrt_recursion(n / 4);
 	else if (n % 9 == 0)
