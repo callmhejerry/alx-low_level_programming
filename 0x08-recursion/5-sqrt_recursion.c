@@ -1,5 +1,6 @@
 /**
- * _sqrt_recursion - A function that returns the natural square root of a number
+ * _sqrt_recursion - A function that returns
+ * the natural square root of a number
  * @n: the number to find the square root of
  *
  * Return: the square root of n
