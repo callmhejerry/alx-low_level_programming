@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 			result = result + atoi(argv[i]);
 			i++;
 		}
+		printf("%i\n", result);
 	}
-	printf("%i\n", result);
 	return (0);
 }
