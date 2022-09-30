@@ -22,10 +22,10 @@ int main(int argc, char *argv[])
 		i = 1;
 		while (i < argc)
 		{
-			if (*argv[i] < '1' || *argv[i] > '9')
+			if (atoi(argv[i]) == 0)
 			{
 				printf("Error\n");
-				return (1);
+				return(1);
 			}
 			result = result + atoi(argv[i]);
 			i++;
