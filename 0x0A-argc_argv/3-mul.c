@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		result = argv[1] * argv[2];
+		result = *argv[1] * *argv[2];
 		printf("%i\n", result);
 	}
 	return (0);
