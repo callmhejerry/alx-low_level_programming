@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int result;
+	long result;
 
 	if (argc < 3)
 	{
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		result = *argv[1] * *argv[2];
-		printf("%i\n", result);
+		printf("%li\n", result);
 	}
 	return (0);
 }
