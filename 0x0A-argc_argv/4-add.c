@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	result = 0;
 
 	if (argc == 1)
-		printf("0");
+		printf("%i\n", result);
 	else
 	{
 		i = 1;
