@@ -9,7 +9,7 @@
  */
 int check(char *str)
 {
-	int i,j;
+	int i, j;
 
 	j = 1;
 	if (str[0] == '-' && str[1] != '\0')
