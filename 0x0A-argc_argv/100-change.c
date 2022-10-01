@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * main - A function that that prints the minimum number of coins to
@@ -13,13 +14,12 @@ int main(int argc, char *argv[])
 {
 	int i, digit;
 
-	digit = atoi(argv[1]);
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (atoi(argv[1]) <= 0)
+	if (check(argv[1]) == 0)
 	{
 		printf("0\n");
 		return (0);
@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		i = 0;
+		digit = atoi(argv[1]);
 		while (digit != 0)
 		{
 			if (digit - 25 >= 0)
