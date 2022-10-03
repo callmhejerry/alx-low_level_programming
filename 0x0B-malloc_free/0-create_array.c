@@ -24,6 +24,5 @@ char *create_array(int size, char c)
 		ptr[i] = c;
 		i++;
 	}
-	
 	return (ptr);
 }
