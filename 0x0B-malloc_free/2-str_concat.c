@@ -10,24 +10,24 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *ptr;
-	int size;
+	int size, i, k, a, l, m;
 
 	if (s1 == NULL && s2 == NULL)
 		return (NULL);
-	for (int i = 0; s1[i] != '\0'; i++)
+	for (i = 0; s1[i] != '\0'; i++)
 		;
-	for (int k; s2[k] != '\0'; k++)
+	for (k; s2[k] != '\0'; k++)
 		;
 	size = i + k + 1;
 	ptr = (char *)malloc(sizeof(char) * size);
 	if (ptr == NULL)
 		return (NULL);
-	for (int a = 0; a < size; )
+	for (a = 0; a < size; )
 	{
-		for (int l = 0; s1[l] != '\0'; l++, a++)
+		for (l = 0; s1[l] != '\0'; l++, a++)
 			ptr[a] = s1[l];
 		a--;
-		for (int m = 0; s2[m] != '\0'; m++, a++)
+		for (m = 0; s2[m] != '\0'; m++, a++)
 			ptr[a] = s2[m];
 		ptr[a] = '\0';
 	}
