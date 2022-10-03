@@ -38,10 +38,12 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	for (a = 0; a < size; )
 	{
-		for (l = 0; s1[l] != '\0' && s1 != NULL; l++, a++)
-			ptr[a] = s1[l];
-		for (m = 0; s2[m] != '\0' && s2 != NULL; m++, a++)
-			ptr[a] = s2[m];
+		if (s1 != NULL)
+			for (l = 0; s1[l] != '\0'; l++, a++)
+				ptr[a] = s1[l];
+		if (s2 != NULL)
+			for (m = 0; s2[m] != '\0'; m++, a++)
+				ptr[a] = s2[m];
 		ptr[a] = '\0';
 		a++;
 	}
