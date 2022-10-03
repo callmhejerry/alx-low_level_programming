@@ -10,6 +10,7 @@
 char *create_array(int size, char c)
 {
 	char *ptr;
+	int i;
 
 	if (size == 0)
 		return (NULL);
@@ -17,6 +18,14 @@ char *create_array(int size, char c)
 	ptr = (char *)malloc(sizeof(char) * size);
 	if (ptr == NULL)
 		return (NULL);
-	*ptr = c;
+	else
+	{
+		i = 0;
+		while (i < size)
+		{
+			ptr[i] = c;
+			i++;
+		}
+	}
 	return (ptr);
 }
