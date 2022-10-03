@@ -26,10 +26,10 @@ char *str_concat(char *s1, char *s2)
 	{
 		for (l = 0; s1[l] != '\0'; l++, a++)
 			ptr[a] = s1[l];
-		a--;
 		for (m = 0; s2[m] != '\0'; m++, a++)
 			ptr[a] = s2[m];
 		ptr[a] = '\0';
+		a++;
 	}
 	return (ptr);
 }
