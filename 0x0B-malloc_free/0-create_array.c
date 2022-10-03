@@ -18,14 +18,12 @@ char *create_array(int size, char c)
 	ptr = (char *)malloc(sizeof(char) * size);
 	if (ptr == NULL)
 		return (NULL);
-	else
+	i = 0;
+	while (i < size)
 	{
-		i = 0;
-		while (i < size)
-		{
-			ptr[i] = c;
-			i++;
-		}
+		ptr[i] = c;
+		i++;
 	}
+	
 	return (ptr);
 }
