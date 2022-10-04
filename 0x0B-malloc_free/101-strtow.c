@@ -12,7 +12,7 @@ char **strtow(char *str)
 	char **ptr;
 	int i, count, j, k;
 
-	if (str == NULL || *str == "")
+	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	count = total(str);
 	ptr = (char **)malloc(sizeof(char *) * count);
