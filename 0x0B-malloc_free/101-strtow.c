@@ -29,7 +29,7 @@ char **strtow(char *str)
 			{
 				ptr[j] = (char *)malloc(sizeof(char) * k);
 				if (ptr[j] == NULL)
-					free(ptr[j]);
+					return (NULL);
 				j++;
 			}
 			else
