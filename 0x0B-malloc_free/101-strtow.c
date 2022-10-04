@@ -23,7 +23,7 @@ char **strtow(char *str)
 	for (i = 0, j = 0; str[i] != '\0'; ++i)
 		if (str[i] != ' ')
 		{
-			for (k = 0; str[i] != ' ' && str[i] != '\0'; k++, i++)
+			for (k = 1; str[i] != ' ' && str[i] != '\0'; k++, i++)
 				;
 			if (j < count)
 			{
