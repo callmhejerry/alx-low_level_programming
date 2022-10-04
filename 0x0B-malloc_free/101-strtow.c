@@ -20,10 +20,10 @@ char **strtow(char *str)
 	ptr = (char **)malloc(sizeof(char *) * (count + 1));
 	if (ptr == NULL)
 		return (NULL);
-	for (i = 0, j = 0; str[i] != '\0'; i++)
+	for (i = 0, j = 0; str[i] != '\0'; ++i)
 		if (str[i] != ' ')
 		{
-			for (k = 1; str[i] != ' '; k++, i++)
+			for (k = 0; str[i] != ' ' && str[i] != '\0'; k++, i++)
 				;
 			if (j < count)
 			{
