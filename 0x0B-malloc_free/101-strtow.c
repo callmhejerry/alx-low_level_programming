@@ -15,11 +15,12 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	count = total(str);
-	ptr = (char **)malloc(sizeof(char *) * count);
+	if (count < 1)
+		return (NULL);
+	ptr = (char **)malloc(sizeof(char *) * (count + 1));
 	if (ptr == NULL)
 		return (NULL);
 	for (i = 0, j = 0; str[i] != '\0'; i++)
-	{
 		if (str[i] != ' ')
 		{
 			for (k = 1; str[i] != ' '; k++, i++)
@@ -34,7 +35,6 @@ char **strtow(char *str)
 			else
 				ptr[j] = NULL;
 		}
-	}
 	for (i = 0, j = 0; str[i] != '\0'; i++)
 		if (str[i] != ' ')
 		{
@@ -59,7 +59,7 @@ int total(char *str)
 {
 	int count, i;
 
-	for (i = 0, count = 1; str[i] != '\0'; i++)
+	for (i = 0, count = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] != ' ')
 		{
