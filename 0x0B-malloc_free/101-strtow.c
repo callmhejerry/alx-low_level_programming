@@ -1,5 +1,6 @@
 #include <stdlib.h>
 
+int total(char *str);
 /**
  * strtow - A function that splits a string into words
  * @str: the pointer to the string
@@ -11,7 +12,7 @@ char **strtow(char *str)
 	char **ptr;
 	int i, count, j, k;
 
-	if (str == NULL || str == "")
+	if (str == NULL || *str == "")
 		return (NULL);
 	count = total(str);
 	ptr = (char **)malloc(sizeof(char *) * count);
