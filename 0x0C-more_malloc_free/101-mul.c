@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
  * Return: 1 if it can be converted to an integer
  * 0 if it cannot
  */
-int int_check(char *Str)
+int int_check(char *str)
 {
 	int check, i;
 
@@ -51,5 +51,5 @@ int int_check(char *Str)
 		if (str[i] < '0' || str[i] > '9')
 			return (0);
 	}
-	return (check)
+	return (check);
 }
