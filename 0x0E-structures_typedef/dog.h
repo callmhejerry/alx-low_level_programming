@@ -1,5 +1,6 @@
 #ifndef DOG_H
 #define DOG_H
+#pragma pack(0)
 /**
  * struct dog - A structure of a dog
  * @name: the name of the dog
