@@ -12,14 +12,36 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *newDog;
+	unsigned int nameLen, ownLen, count;
 
-	newDog = malloc(sizeof(struct dog));
+	if (name == NULL || owner == NULL)
+		return (NULL);
+	newDog = malloc(sizeof(dog_t));
 	if (newDog == NULL)
+		return (NULL);
+	for (nameLen = 0; name[nameLen] != '\0'; nameLen++)
+		;
+	nameLen++;
+	newDog->name = malloc(sizeof(char) * nameLen);
+	newDog->age = age;
+	if (newDog->name == NULL)
 	{
+		free(newDog->name);
 		return (NULL);
 	}
-	newDog->age = age;
-	newDog->name = name;
-	newDog->owner = owner;
+	for (count = 0; count < nameLen; count++)
+		newDog->name[count] = name[count];
+	for (ownLen = 0; owner[ownLen] != '\0'; ownLen++)
+		;
+	ownLen++;
+	newDog->owner = malloc(sizeof(char) * ownLen);
+	if (newDog->owner == NULL)
+	{
+		free(newDog->owner);
+		free(newDog);
+		return (NULL);
+	}
+	for (count = 0; count < ownLen; count++)
+		newDog->owner[count] = owner[count];
 	return (newDog);
 }
