@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "dog.h"
+#pragma pack(0)
 
 /**
  * free_dog -  A function tht frees a struct dog memory
