@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 int result;
 int (*func)(int, int);
 
-if (argv == NULL)
+if (argv[1] == NULL || argv[3] == NULL)
 {
 printf("Error\n");
 exit(98);
