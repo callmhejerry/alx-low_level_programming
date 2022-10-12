@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 /**
 * print_name - A function that takes a callback function
 * and prints a name
