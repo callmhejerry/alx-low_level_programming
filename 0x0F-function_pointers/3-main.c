@@ -14,6 +14,11 @@ int main(int argc, char *argv[])
 int result;
 int (*func)(int, int);
 
+if (argv == NULL)
+{
+printf("Error\n");
+exit(98);
+}
 if (argc != 4)
 {
 printf("Error\n");
