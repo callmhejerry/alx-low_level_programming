@@ -20,7 +20,12 @@ printf("Error\n");
 exit(98);
 }
 func = get_op_func(argv[2]);
-if(argv[2][1] != '\0' || func == NULL)
+if (func == NULL)
+{
+printf("Error\n");
+exit(99);
+}
+if(argv[2][1] != '\0')
 {
 printf("Error\n");
 exit(99);
