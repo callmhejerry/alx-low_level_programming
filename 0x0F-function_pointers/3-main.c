@@ -19,12 +19,12 @@ if (argc != 4)
 printf("Error\n");
 exit(98);
 }
-if(argv[2][1] != '\0')
+func = get_op_func(argv[2]);
+if(argv[2][1] != '\0' || func == NULL)
 {
 printf("Error\n");
 exit(99);
 }
-func = get_op_func(argv[2]);
 result = func(atoi(argv[1]), atoi(argv[3]));
 printf("%i\n", result);
 return (0);
