@@ -21,10 +21,6 @@ op_t ops[] = {
 int i;
 
 i = 0;
-if (s == NULL)
-{
-return (NULL);
-}
 while (ops[i].op != NULL)
 {
 if (*s == *(ops[i].op))
