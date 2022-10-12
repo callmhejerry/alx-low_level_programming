@@ -21,7 +21,7 @@ op_t ops[] = {
 int i;
 
 i = 0;
-while (i < 6)
+while (ops[i].op != NULL)
 {
 if (*s == *(ops[i].op))
 {
@@ -29,5 +29,6 @@ return (ops[i].f);
 }
 i++;
 }
-return (NULL);
+printf("Error\n");
+exit(99);
 }
