@@ -18,9 +18,9 @@ unsigned int i;
 va_start(ap, n);
 for (i = 0; i < n; i++)
 {
-printf("%i",va_arg(ap, int));
+printf("%i", va_arg(ap, int));
 if (separator != NULL)
-printf("%s",separator);
+printf("%s", separator);
 }
 printf("\n");
 va_end(ap);
