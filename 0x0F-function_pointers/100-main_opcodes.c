@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 char *str;
 int i;
 
-str = (char*)main;
+str = (char *)main;
 if (argc != 2)
 {
 printf("Error\n");
