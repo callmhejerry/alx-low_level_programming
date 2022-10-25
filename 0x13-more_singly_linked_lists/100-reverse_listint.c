@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-  * reverse_listint_t - A fucntion that reverses a listint_t linked list
+  * reverse_listint - A fucntion that reverses a listint_t linked list
   * @head: the pointer to the start of the list
   * Return: the pointer to the first node of the list
   */
@@ -12,7 +12,12 @@ listint_t *reverse_listint(listint_t **head)
 
 	before = NULL;
 	after = *head;
-	*head = (*head)->next; 
+	*head = (*head)->next;
+	if (*head == NULL)
+	{
+		*head = after;
+		return (after);
+	}
 	while (*head != NULL)
 	{
 		after->next = before;
