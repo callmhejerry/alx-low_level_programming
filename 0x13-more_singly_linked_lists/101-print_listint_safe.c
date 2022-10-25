@@ -13,15 +13,17 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 		exit(98);
-	before = head;
+	before = NULL;
 	after = head;
 	count = 0;
-	while (before >= after && after != NULL)
+	while (1)
 	{
 		printf("[%p] %i\n", (void *)after, after->n);
 		before = after;
 		after = after->next;
 		count++;
+		if (after > before || after == NULL)
+			break;
 	}
 	if (after != NULL)
 		printf("-> [%p] %i\n", (void *)after, after->n);
