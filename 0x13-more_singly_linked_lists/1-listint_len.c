@@ -7,10 +7,10 @@
   * @h: the pointer to the start of the list
   * Return: the length o the list
   */
-size_t listint_le(const listint_t *h)
+size_t listint_len(const listint_t *h)
 {
 	size_t count;
-	listint_t *temp;
+	const listint_t *temp;
 
 	count = 0;
 	temp = h;
