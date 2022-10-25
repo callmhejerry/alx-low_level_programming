@@ -26,6 +26,9 @@ size_t print_listint_safe(const listint_t *head)
 			break;
 	}
 	if (after != NULL)
+	{
 		printf("-> [%p] %i\n", (void *)after, after->n);
+		count++;
+	}
 	return (count);
 }
