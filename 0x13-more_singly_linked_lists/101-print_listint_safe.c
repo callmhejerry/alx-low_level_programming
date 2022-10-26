@@ -12,7 +12,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count;
 
 	if (head == NULL)
-		return (0);
+		exit(98);
 	before = head;
 	after = head->next;
 	count = 0;
