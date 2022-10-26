@@ -13,21 +13,22 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 		return (0);
-	before = NULL;
-	after = head;
+	before = head;
+	after = head->next;
 	count = 0;
-	while (1)
+	while (after != NULL && after < before)
 	{
-		printf("[%p] %i\n", (void *)after, after->n);
+		printf("[%p] %i\n", (void *)before, before->n);
 		before = after;
 		after = after->next;
 		count++;
-		if (after > before || after == NULL)
-			break;
 	}
+	printf("[%p] %i\n", (void *)before, before->n);
+	count++;
 	if (after != NULL)
 	{
 		printf("-> [%p] %i\n", (void *)after, after->n);
 	}
+	printf("count - %lu\n", count);
 	return (count);
 }
