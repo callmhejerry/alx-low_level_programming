@@ -29,6 +29,5 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		printf("-> [%p] %i\n", (void *)after, after->n);
 	}
-	printf("count - %lu\n", count);
 	return (count);
 }
