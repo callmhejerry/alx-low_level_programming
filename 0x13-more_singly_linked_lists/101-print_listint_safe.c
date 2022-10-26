@@ -12,14 +12,14 @@ size_t print_listint_safe(const listint_t *head)
 	size_t count;
 
 	if (head == NULL)
-		exit(98);
+		return(0);
 	before = head;
 	after = head->next;
 	count = 0;
 	while (after != NULL && after < before)
 	{
 		printf("[%p] %i\n", (void *)before, before->n);
-		before = after;
+		before = before->next;
 		after = after->next;
 		count++;
 	}
