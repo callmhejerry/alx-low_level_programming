@@ -16,6 +16,13 @@ size_t print_listint_safe(const listint_t *head)
 	before = head;
 	after = head->next;
 	count = 0;
+	if (after == before)
+	{
+		count++;
+		printf("[%p] %i\n", (void *)before, before->n);
+		printf("-> [%p] %i\n", (void *)before, before->n);
+		return (count);
+	}
 	while (after != NULL && after < before)
 	{
 		printf("[%p] %i\n", (void *)before, before->n);
