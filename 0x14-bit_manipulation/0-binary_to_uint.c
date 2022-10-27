@@ -31,7 +31,7 @@ unsigned int binary_to_uint(const char *b)
 }
 
 /**
- * _pow_recursion - return the value of x raised to power y
+ * _pow - return the value of x raised to power y
  * @x: base number
  * @y: the power
  *
