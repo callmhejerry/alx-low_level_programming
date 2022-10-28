@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /**
   * get_bit - A function that returns the value
   * of a bit at a given index
@@ -9,10 +9,10 @@
   */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long check;
+	unsigned long int check;
 
 	check = 1 << index;
 	if (check > n)
 		return (-1);
-	return ((n & check) >> index);
+	return (((n & check) >> index));
 }
