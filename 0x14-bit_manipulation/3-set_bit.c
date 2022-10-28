@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
   * set_bit - A function that sets the value
@@ -9,9 +10,8 @@
   */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int check;
-
-	check = 1 << index;
-	*n |= check;
+	if ((1 << index) > (256 << sizeof(unsigned long)))
+			return (-1);
+	*n |= (1 << index);
 	return (1);
 }
