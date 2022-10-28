@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 
-long int _pow(long x, long y);
+unsigned long int _pow(long x, long y);
 /**
   * print_binary - A function that prints the binary
   * representation of a number
@@ -10,7 +10,8 @@ long int _pow(long x, long y);
   */
 void print_binary(unsigned long int n)
 {
-	long num, count;
+	unsigned long int num;
+	long count;
 
 	num = n;
 	count = 0;
@@ -47,9 +48,9 @@ void print_binary(unsigned long int n)
  *
  * Return: the value of x raised to power y
  */
-long int _pow(long x, long y)
+unsigned long int _pow(long x, long y)
 {
-	long result, count;
+	unsigned long int result, count;
 
 	if (y == 0)
 		return (1);

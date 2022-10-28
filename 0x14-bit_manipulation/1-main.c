@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "main.h"
-
+#include <limits.h>
 /**
    * main - check the code
     *
@@ -8,9 +8,9 @@
       */
 int main(void)
 {
-	    print_binary(0);
+	    print_binary(ULONG_MAX);
 	        printf("\n");
-		    print_binary(1);
+		    print_binary(3);
 		        printf("\n");
 			    print_binary(98);
 			        printf("\n");
