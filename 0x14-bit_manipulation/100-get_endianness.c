@@ -11,7 +11,7 @@ int get_endianness(void)
 
 	i = 1;
 	bte = (char *)&i;
-	if (*btye)
+	if (*bte == 0)
 		return (0);
 	return (1);
 }
