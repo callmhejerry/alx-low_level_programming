@@ -14,7 +14,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	result = 0;
 	count = 0;
 	xor = n ^ m;
-	while (count < (sizeof(unsigned long int) * 8 - 1))
+	while (count <= (sizeof(unsigned long int) * 8 - 1))
 	{
 		if (xor & 1)
 			result++;
