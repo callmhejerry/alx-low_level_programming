@@ -3,6 +3,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <stdlib.h>
 
 /**
   * read_textfile - A function that reads a text file
@@ -14,14 +15,17 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd_filename, rd, wr;
-	char buffer[letters];
+	char *buffer;
 
+	buffer = (char *)malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
 	if (filename == NULL)
 		return (0);
 	fd_filename = open(filename, O_RDONLY);
-	if (filename < 0)
+	if (fd_filename < 0)
 		return (0);
-	rd = read(fd_fiilename, buffer, letters);
+	rd = read(fd_filename, buffer, letters);
 	if (rd < 0)
 		return (0);
 	wr = write(STDOUT_FILENO, buffer, rd);
