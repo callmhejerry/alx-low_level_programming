@@ -34,8 +34,15 @@ int main(int argc, char *argv[])
 	}
 	else
 		truncate(argv[2], 0);
-	while ((rd = read(fd_from, buffer, 1024)) > 0)
-		write(fd_to, buffer, rd);
+	rd = 1024;
+	while (rd == 1024)
+	{
+		rd = read(fd_from, buffer, sizeof(buffer));
+		if (rd < 0)
+			check_fd_from(fd_from, argv[1]);
+		if (write(fd_to, buffer, rd) < 0)
+			check_fd_to(fd_to, argv[2]);
+	}
 	if (rd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
