@@ -19,7 +19,7 @@ int create_file(const char *filename, char *text_content)
 	fd_file = open(filename, O_WRONLY | O_CREAT | O_EXCL, 0600);
 	if (fd_file < 0)
 		return (-1);
-	if (text_context == NULL)
+	if (text_content == NULL)
 	{
 		close(fd_file);
 		return (1);
