@@ -10,7 +10,7 @@
   * of a file to another file
   * @argc: the number of arguments passed
   * @argv: the array of arguments
-  * return: 0
+  * Return: 0
   */
 int main(int argc, char *argv[])
 {
@@ -29,12 +29,16 @@ int main(int argc, char *argv[])
 				 argv[1]);
 		exit(98);
 	}
-	fd_to = open(argv[2], O_RDWR | O_CREAT | O_EXCL, 0666);
+	fd_to = open(argv[2], O_WRONLY);
 	if (fd_to < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n",
-				 argv[2]);
-		exit(99);
+		fd_to = open(argv[2], O_WRONLY | O_CREAT, 0664);
+		if (fd_to < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n",
+					 argv[2]);
+			exit(99);
+		}
 	}
 	while ((rd = read(fd_from, buffer, 1024)) > 0)
 		write(fd_to, buffer, rd);
