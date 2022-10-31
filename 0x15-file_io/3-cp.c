@@ -29,13 +29,16 @@ int main(int argc, char *argv[])
 	fd_to = open(argv[2], O_WRONLY);
 	if (fd_to < 0)
 	{
-		fd_to = open(argv[2], O_WRONLY | O_CREAT, 0664);
+		fd_to = open(argv[2], O_WRONLY | O_CREAT, 0674);
 		check_fd_to(fd_to, argv[2]);
 	}
 	else
 		truncate(argv[2], 0);
 	while ((rd = read(fd_from, buffer, 1024)) > 0)
-		write(fd_to, buffer, rd);
+	{
+		if (write(fd_to, buffer, rd) < 0)
+			check_fd_to(fd_to, argv[2]);
+	}
 	if (rd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
