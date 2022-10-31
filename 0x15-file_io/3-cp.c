@@ -40,6 +40,8 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
+	else
+		truncate(argv[2], 0);
 	while ((rd = read(fd_from, buffer, 1024)) > 0)
 		write(fd_to, buffer, rd);
 	if (close(fd_from) < 0)
