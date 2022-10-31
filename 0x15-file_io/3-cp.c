@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	fd_to = open(argv[2], O_WRONLY);
 	if (fd_to < 0)
 	{
-		fd_to = open(argv[2], O_WRONLY | O_CREAT, 0674);
+		fd_to = open(argv[2], O_WRONLY | O_CREAT, mode);
 		check_fd_to(fd_to, argv[2]);
 	}
 	else
