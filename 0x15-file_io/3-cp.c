@@ -25,16 +25,9 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fd_from = open(argv[1], O_RDONLY);
-	if (fd_from < 0)
-		check_fd_from(fd_from, argv[1]);
-	fd_to = open(argv[2], O_WRONLY);
-	if (fd_to < 0)
-	{
-		fd_to = open(argv[2], O_WRONLY | O_CREAT, mode);
-		check_fd_to(fd_to, argv[2]);
-	}
-	else
-		truncate(argv[2], 0);
+	check_fd_from(fd_from, argv[1]);
+	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	check_fd_to(fd_to, argv[2]);
 	rd = 1024;
 	while (rd == 1024)
 	{
@@ -43,12 +36,6 @@ int main(int argc, char *argv[])
 			check_fd_from(fd_from, argv[1]);
 		if (write(fd_to, buffer, rd) < 0)
 			check_fd_to(fd_to, argv[2]);
-	}
-	if (rd < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
-				 argv[1]);
-		exit(98);
 	}
 	if (close(fd_from) < 0)
 	{
