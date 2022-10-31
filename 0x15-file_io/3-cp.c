@@ -4,8 +4,8 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <stdio.h>
-int check_fd_to(int fd_to, char *filename);
-int check_fd_from(int fd_From, char *filename);
+void check_fd_to(int fd_to, char *filename);
+void check_fd_from(int fd_From, char *filename);
 /**
   * main - A program that copies the content
   * of a file to another file
@@ -66,7 +66,7 @@ void check_fd_to(int fd_to, char *filename)
 {
 	if (fd_to < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 		exit(99);
 	}
 }
@@ -83,7 +83,7 @@ void check_fd_from(int fd_from, char *filename)
 	if (fd_from < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
-				 argv[1]);
+				 filename);
 		exit(98);
 	}
 }
