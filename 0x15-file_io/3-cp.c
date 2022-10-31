@@ -33,9 +33,9 @@ int main(int argc, char *argv[])
 	{
 		rd = read(fd_from, buffer, sizeof(buffer));
 		if (rd < 0)
-			check_fd_from(fd_from, argv[1]);
+			check_fd_from(-1, argv[1]);
 		if (write(fd_to, buffer, rd) < 0)
-			check_fd_to(fd_to, argv[2]);
+			check_fd_to(-1, argv[2]);
 	}
 	if (close(fd_from) < 0)
 	{
