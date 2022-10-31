@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
 {
 	int fd_from, fd_to, rd;
 	char buffer[1024];
+	unsigned int mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
 	if (argc != 3)
 	{
