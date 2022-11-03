@@ -241,5 +241,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	print_elf_file(hdr);
+	close(fd_elf);
 	return (0);
 }
