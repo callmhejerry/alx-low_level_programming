@@ -28,13 +28,31 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hashNode = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (hashNode == NULL)
 		return (0);
-	hashNode->key = key;
+	hashNode->key = strdup(key);
 	hashNode->value = dupValue;
+	hashNode->next = NULL;
 
 	/*check if empty*/
 	if (ht->array[index] != NULL)
-		ht->array[0] = hashNode;
+		add_node(ht->array[index], node)
 	else
 		ht->array[index] = hashNode;
 	return (1);
+}
+
+void add_node(hash_node_t *head, hash_node_t node)
+{
+	hash_node_t *temp;
+
+	temp = head;
+
+	while (temp != NULL)
+	{
+		if (temp->next == NULL)
+		{
+			temp->next = node;
+			break;
+		}
+		temp = temp->next;
+	}
 }
