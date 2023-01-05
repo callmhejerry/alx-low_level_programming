@@ -35,7 +35,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/*check if empty*/
 	if (ht->array[index] != NULL)
+	{
 		add_node(ht->array[index], hashNode);
+	}
 	else
 		ht->array[index] = hashNode;
 	return (1);
@@ -50,17 +52,37 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  */
 void add_node(hash_node_t *head, hash_node_t *node)
 {
-	hash_node_t *temp;
+	hash_node_t *temp, *prev;
+	char *key;
 
 	temp = head;
+	key = node->key;
+	prev = NULL;
 
 	while (temp != NULL)
 	{
+		if (strcmp(temp->key, key) == 0)
+		{
+			if (prev == NULL)
+			{
+				node->next = head->next;
+				head = node;
+			}
+			else
+			{
+				node->next = temp->next;
+				prev->next = node;
+			}
+			free(temp->key);
+			free(temp->value);
+			break;
+		}
 		if (temp->next == NULL)
 		{
 			temp->next = node;
 			break;
 		}
+		prev = temp;
 		temp = temp->next;
 	}
 }
