@@ -28,8 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hashNode = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (hashNode == NULL)
 		return (0);
-	/*hashNode->key = strdup(key);*/
-	strcpy(hashNode->key, key);
+	hashNode->key = strdup(key);
+	/*strcpy(hashNode->key, key);*/
 	hashNode->value = dupValue;
 	hashNode->next = NULL;
 
