@@ -34,12 +34,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hashNode->next = NULL;
 
 	/*check if empty*/
+	/*
 	if (ht->array[index] != NULL)
 	{
 		add_node(ht->array[index], hashNode);
 	}
 	else
 		ht->array[index] = hashNode;
+		*/
+	ht->array[index] = hashNode;
 	return (1);
 }
 
