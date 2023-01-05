@@ -34,13 +34,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/*check if empty*/
 	if (ht->array[index] != NULL)
-		add_node(ht->array[index], node)
+		add_node(ht->array[index], hashNode);
 	else
 		ht->array[index] = hashNode;
 	return (1);
 }
 
-void add_node(hash_node_t *head, hash_node_t node)
+void add_node(hash_node_t *head, hash_node_t *node)
 {
 	hash_node_t *temp;
 
