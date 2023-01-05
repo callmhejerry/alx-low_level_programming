@@ -52,12 +52,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
  */
 void add_node(hash_node_t *head, hash_node_t *node)
 {
-	hash_node_t *temp, *prev;
+	hash_node_t *temp;
 	char *key;
 
 	temp = head;
 	key = node->key;
-	prev = NULL;
 
 	while (temp != NULL)
 	{
@@ -71,7 +70,6 @@ void add_node(hash_node_t *head, hash_node_t *node)
 			temp->next = node;
 			break;
 		}
-		prev = temp;
 		temp = temp->next;
 	}
 }
