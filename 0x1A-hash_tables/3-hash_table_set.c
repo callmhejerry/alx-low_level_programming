@@ -28,7 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hashNode = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (hashNode == NULL)
 		return (0);
-	hashNode->key = strdup(key);
+	/*hashNode->key = strdup(key);*/
+	strcpy(hashNode->key, key);
 	hashNode->value = dupValue;
 	hashNode->next = NULL;
 
@@ -40,6 +41,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	return (1);
 }
 
+
+/**
+ * add_node - A function that adds a node to the end of a linked list
+ * @head: the pointer to the first node
+ * @node: the node to add the list
+ * Return: void
+ */
 void add_node(hash_node_t *head, hash_node_t *node)
 {
 	hash_node_t *temp;
