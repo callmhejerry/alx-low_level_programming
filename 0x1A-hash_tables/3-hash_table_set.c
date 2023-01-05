@@ -15,13 +15,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dupValue, *dupKey;
 	hash_node_t *hashNode;
 
-	if (key == NULL || key == "")
+	if (key == NULL || strlen(key) == 0)
 		return (0);
 
 	size = ht->size;
 	dupValue = strdup(value);
 	dupKey = strdup(key);
-	index = key_index(key, size);
+	index = key_index((unsigned char *)key, size);
 
 	/*create the hash node to be stored in the hash table*/
 	hashNode = (hash_node_t *)malloc(sizeof(hash_node_t));
@@ -32,7 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/*check if empty*/
 	if (ht->array[index] != NULL)
-		ht->array = hashNode;
+		ht->array[0] = hashNode;
 	else
 		ht->array[index] = hashNode;
 	return (1);
