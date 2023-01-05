@@ -36,10 +36,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	/*check if empty*/
 	if (ht->array[index] != NULL)
 	{
-		/*add_node(ht->array[index], hashNode);*/
-		if (strcmp(ht->array[index]->key, key) == 0)
+		if (add_node(ht->array[index], key, dupValue) == 1)
 		{
-			ht->array[index] = hashNode;
+			free(hashNode->key);
+			free(hashNode);
 			return (1);
 		}
 		hashNode->next = ht->array[index];
@@ -52,31 +52,29 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 
 /**
- * add_node - A function that adds a node to the end of a linked list
+ * add_node - A function that searches the linked list to see
+ * if the key already exits and update the value
+ *
  * @head: the pointer to the first node
- * @node: the node to add the list
- * Return: void
+ * @key: the key to search for
+ * @value: the value to update the node with
+ * Return: 1 if successful, 0 otherwise
  */
-void add_node(hash_node_t *head, hash_node_t *node)
+int add_node(hash_node_t *head, const char *key, char *value)
 {
 	hash_node_t *temp;
-	char *key;
 
 	temp = head;
-	key = node->key;
 
 	while (temp != NULL)
 	{
 		if (strcmp(temp->key, key) == 0)
 		{
-			strcpy(temp->value, node->value);
-			break;
-		}
-		if (temp->next == NULL)
-		{
-			temp->next = node;
-			break;
+			free(temp->value);
+			temp->value = value;
+			return (1);
 		}
 		temp = temp->next;
 	}
+	return (0);
 }
