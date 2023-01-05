@@ -12,22 +12,23 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index, size;
-	char *dupValue, *dupKey;
+	char *dupValue;
 	hash_node_t *hashNode;
 
 	if (key == NULL || strlen(key) == 0)
+	{
 		return (0);
+	}
 
 	size = ht->size;
 	dupValue = strdup(value);
-	dupKey = strdup(key);
 	index = key_index((unsigned char *)key, size);
 
 	/*create the hash node to be stored in the hash table*/
 	hashNode = (hash_node_t *)malloc(sizeof(hash_node_t));
 	if (hashNode == NULL)
 		return (0);
-	hashNode->key = dupKey;
+	hashNode->key = key;
 	hashNode->value = dupValue;
 
 	/*check if empty*/
