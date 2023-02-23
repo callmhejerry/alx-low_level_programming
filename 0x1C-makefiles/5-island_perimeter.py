@@ -5,13 +5,12 @@
 
 def island_perimeter(grid):
     '''Returns the perimeter of the island'''
-    if type(grid) is list and type(grid[0]) is list:
-        perimeter = 0
-        for row in range(len(grid)):
-            for col in range(len(grid[row])):
-                if grid[row][col] == 1:
-                    perimeter = perimeter + check_sides(row, col, grid)
-        return perimeter
+    perimeter = 0
+    for row in range(len(grid)):
+        for col in range(len(grid[row])):
+            if grid[row][col] == 1:
+                perimeter = perimeter + check_sides(row, col, grid)
+    return perimeter
 
 
 def check_sides(row, col, grid):
