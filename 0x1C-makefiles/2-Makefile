@@ -1,12 +1,7 @@
-CC=gcc
-SRC=$(wildcard *.c)
-OBJ=$(wildcard *.o)
-NAME=school
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.C=.O)
+NAME = school
 
-
-all: $(OBJ)
-	echo $(OBJ)
-	$(CC) $(OBJ)  -o $(NAME)
-
-$(OBJ): $(SRC)
-	$(CC)  -c -o $@ $^
+all : $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
