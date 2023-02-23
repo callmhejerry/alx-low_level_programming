@@ -1,0 +1,12 @@
+CC=gcc
+SRC=$(wildcard *.c)
+OBJ=$(wildcard *.o)
+NAME=school
+
+
+all: $(OBJ)
+	echo $(OBJ)
+	$(CC) $(OBJ)  -o $(NAME)
+
+$(OBJ): $(SRC)
+	$(CC)  -c -o $@ $^
