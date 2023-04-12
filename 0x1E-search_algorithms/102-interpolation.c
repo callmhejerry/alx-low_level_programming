@@ -38,7 +38,7 @@ int recur_search(int *array, size_t start, size_t stop, int value)
 			printf("Value checked array[%li] is out of range\n", pos);
 			return (-1);
 		}
-		printf("Value checked array[%li] = array[%i]\n",
+		printf("Value checked array[%li] = [%i]\n",
 				pos, array[pos]);
 		if (array[pos] == value)
 			return (pos);
