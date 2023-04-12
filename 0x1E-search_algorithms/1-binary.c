@@ -16,7 +16,7 @@ int binary_search(int *array, size_t size, int value)
 {
 	if (array == NULL)
 		return (-1);
-	return (recur_search(array, 0, size, value));
+	return (recur_search(array, 0, size - 1, value));
 }
 
 /**
@@ -32,9 +32,9 @@ void print_search(size_t start, size_t end, int *array)
 	size_t i;
 
 	printf("Searching in array:");
-	for (i = start; i < end; i++)
+	for (i = start; i <= end; i++)
 	{
-		if (i + 1 == end)
+		if (i == end)
 			printf(" %i\n", array[i]);
 		else
 			printf(" %i,", array[i]);
@@ -53,23 +53,25 @@ void print_search(size_t start, size_t end, int *array)
  */
 int recur_search(int *array, size_t start, size_t end, int value)
 {
-	size_t mid, check;
+	size_t mid;
 	int mid_val;
 
-	check = end - start;
+	if (start <= end)
+	{
+		mid = (start + end) / 2;
+		mid_val = array[mid];
 
-	if (check == 1)
-		mid = start;
-	else
-		mid = ((start + end) / 2) - 1;
-	mid_val = array[mid];
-
-	print_search(start, end, array);
-	if (mid_val == value)
-		return (mid);
-	if (check == 1)
-		return (-1);
-	if (value > mid_val)
-		return (recur_search(array, mid + 1, end, value));
-	return (recur_search(array, start, mid, value));
+		print_search(start, end, array);
+		if (mid_val == value)
+			return (mid);
+		if (value > mid_val)
+			return (recur_search(array, mid + 1, end, value));
+		if (value < mid_val)
+		{
+			if (mid == 0)
+				return (-1);
+			return (recur_search(array, start, mid - 1, value));
+		}
+	}
+	return (-1);
 }
