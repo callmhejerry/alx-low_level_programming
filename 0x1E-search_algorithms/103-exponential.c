@@ -49,7 +49,7 @@ size_t min(size_t first, size_t second)
 }
 
 /**
- * binary_search - A fucntion that searches for a value in an array using
+ * binarySearch - A fucntion that searches for a value in an array using
  * the binary search algorithm
  * @array: the array to be searched
  * @start: the first index of teh array
