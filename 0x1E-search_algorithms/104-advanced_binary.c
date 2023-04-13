@@ -18,7 +18,7 @@ int advanced_binary(int *array, size_t size, int value)
 }
 
 /**
- * recur_binary_search - a function that searches for a value in an arrray
+ * recurBinarySearch - a function that searches for a value in an arrray
  * using the binary search algorithm
  * @array: the array to search
  * @start: the fiest index of the array
@@ -55,14 +55,14 @@ int recurBinarySearch(int *array, size_t start, size_t stop, int value)
  */
 void print_search(size_t start, size_t end, int *array)
 {
-        size_t i;
+	size_t i;
 
-        printf("Searching in array:");
+	printf("Searching in array:");
 	for (i = start; i <= end; i++)
 	{
-                if (i == end)
-                        printf(" %i\n", array[i]);
-                else
-                        printf(" %i,", array[i]);
-        }
+		if (i == end)
+			printf(" %i\n", array[i]);
+		else
+			printf(" %i,", array[i]);
+	}
 }
