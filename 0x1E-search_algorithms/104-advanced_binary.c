@@ -14,7 +14,7 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	if (array == NULL)
 		return (-1);
-	return (recurBinarySearch(array, 0, size, value));
+	return (recurBinarySearch(array, 0, size - 1, value));
 }
 
 /**
@@ -30,20 +30,17 @@ int recurBinarySearch(int *array, size_t start, size_t stop, int value)
 {
 	size_t mid;
 
-	if (stop - start >= 1)
+	if (stop >= start)
 	{
 		print_search(start, stop, array);
 		mid = (stop + start) / 2;
-		if (mid == 0 && value == array[mid])
-			return (mid);
-		if (value < array[mid])
-			return (recurBinarySearch(array, start, mid - 1,
-						value));
+		if (value == array[start])
+			return (start);
 		if (value > array[mid])
 			return (recurBinarySearch(array, mid + 1, stop,
 						value));
-		if (value == array[mid])
-			return (mid);
+		if (value <= array[mid])
+			return (recurBinarySearch(array, start, mid, value));
 	}
 	return (-1);
 }
@@ -61,9 +58,9 @@ void print_search(size_t start, size_t end, int *array)
         size_t i;
 
         printf("Searching in array:");
-	for (i = start; i < end; i++)
+	for (i = start; i <= end; i++)
 	{
-                if (i + 1 == end)
+                if (i == end)
                         printf(" %i\n", array[i]);
                 else
                         printf(" %i,", array[i]);
