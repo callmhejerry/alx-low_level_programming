@@ -41,6 +41,7 @@ int jump_search(int *array, size_t size, int value)
  * @start: the first index of the array
  * @stop: the last index of the array
  * @value: the value to search for
+ * @size: the number of the elements in the array
  * Return: the index of the value, else -1
  */
 int linearSearch(int *array, size_t start, size_t stop, int value, size_t size)
