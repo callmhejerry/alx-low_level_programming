@@ -1,5 +1,7 @@
 #include "search_algos.h"
 
+
+int linearSearch(int *, size_t, size_t, int);
 /**
  * jump_search - A function that searches for a value
  * in a sorted array of integers using the jump search algorithm
@@ -10,35 +12,46 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t jump, start, stop;
+	size_t jump, start;
 
 	jump = sqrt(size);
-	start = 0;
-	stop = jump;
 
 	if (array == NULL)
 		return (-1);
-	printf("Value checked array[%li] = [%i]\n",
-			start, array[start]);
-	if (array[start] == value)
-		return (start);
-	while (stop < size && array[stop] < value)
+
+	for (start = 0; start < size + jump; start += jump)
 	{
-		start = stop;
-		stop += jump;
-		printf("Value checked array[%li] = [%i]\n",
-				start, array[start]);
+		if (start > size || array[start] >= value)
+		{
+			printf("Value found between indexes [%li] and [%li]\n",
+					start - jump, start);
+			return (linearSearch(array, start - jump, size,
+						value));
+		}
+		printf("Value checked array[%li] = [%i]\n", start,
+				array[start]);
 	}
-	printf("Value found between indexes [%li] and [%li]\n", start, stop);
-	if (stop > size)
-		stop = size - 1;
-	while (start <= stop)
+	return (-1);
+}
+
+/**
+ * linearSearch - A function that searches for a value in an array
+ * using linear saerch algorithm
+ * @array: the array to search in
+ * @start: the first index of the array
+ * @stop: the last index of the array
+ * @value: the value to search for
+ * Return: the index of the value, else -1
+ */
+int linearSearch(int *array, size_t start, size_t stop, int value)
+{
+	size_t i;
+
+	for (i = start; i < stop; i++)
 	{
-		printf("Value checked array[%li] = [%i]\n",
-				start, array[start]);
-		if (array[start] == value)
-			return (start);
-		start++;
+		printf("Value checked array[%li] = [%i]\n", i, array[i]);
+		if (array[i] == value)
+			return (i);
 	}
 	return (-1);
 }
