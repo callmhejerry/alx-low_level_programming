@@ -22,12 +22,12 @@ int main(void)
     list = create_skiplist(array, size);
     print_skiplist(list);
 
-    res =  linear_skip(list, 53);
-    printf("Found %d at index: %lu\n\n", 53, res->index);
+    res =  linear_skip(list, 0);
+    printf("Found %d at index: %lu\n\n", 0, res->index);
     res =  linear_skip(list, 2);
     printf("Found %d at index: %lu\n\n", 2, res->index);
-    res =  linear_skip(list, 999);
-    printf("Found %d at index: %p\n", 999, (void *) res);
+    res =  linear_skip(list, 99);
+    printf("Found %d at index: %lu\n", 99, res->index);
 
     free_skiplist(list);
     return (EXIT_SUCCESS);

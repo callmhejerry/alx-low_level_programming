@@ -3,10 +3,9 @@
 skiplist_t *jump(skiplist_t *from);
 skiplist_t *linearSearch(skiplist_t *start, skiplist_t *stop, int value);
 /**
- * jump_list - A function that searches for a value in sorted list of
+ * linear_skip - A function that searches for a value in sorted list of
  * integers using the jump search algorithm
  * @list: the pointer to the head of the list to search in
- * @size: the number of nodes in the list
  * @value: the value to search for
  * Return: the pointer to the first node where value is located,
  * else NULL
@@ -44,14 +43,11 @@ skiplist_t *jump(skiplist_t *from)
 	temp = from;
 	if (temp->express != NULL)
 		return (temp->express);
-	else
+	while (temp != NULL)
 	{
-		while (temp != NULL)
-		{
-			if (temp->next == NULL)
-				break;
-			temp = temp->next;
-		}
+		if (temp->next == NULL)
+			break;
+		temp = temp->next;
 	}
 	return (temp);
 }
