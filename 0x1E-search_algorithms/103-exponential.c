@@ -1,4 +1,4 @@
-#include "search_algos.h"
+#include "../search_algos.h"
 
 
 size_t min(size_t, size_t);

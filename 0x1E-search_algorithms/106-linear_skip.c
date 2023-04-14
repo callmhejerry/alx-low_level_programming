@@ -1,7 +1,7 @@
-#include "../search_algos.h"
+#include "search_algos.h"
 
-listint_t *jump(size_t step, listint_t *from);
-listint_t *linearSearch(listint_t *start, listint_t *stop, int value);
+skiplist_t *jump(skiplist_t *from);
+skiplist_t *linearSearch(skiplist_t *start, skiplist_t *stop, int value);
 /**
  * jump_list - A function that searches for a value in sorted list of
  * integers using the jump search algorithm
@@ -11,24 +11,22 @@ listint_t *linearSearch(listint_t *start, listint_t *stop, int value);
  * Return: the pointer to the first node where value is located,
  * else NULL
  */
-listint_t *jump_list(listint_t *list, size_t size, int value)
+skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	size_t step;
-	listint_t *start, *stop;
+	skiplist_t *start, *stop;
 
 	if (list == NULL)
 		return (NULL);
-	step = sqrt(size);
 	start = list;
-	stop = jump(step, start);
-	while (start->index < size)
+	stop = jump(start);
+	while (start->index != stop->index)
 	{
 		printf("Value checked at index [%li] = [%i]\n", stop->index,
 				stop->n);
-		if (stop->n >= value || stop->index >= size - 1)
+		if (stop->n >= value || start->express == NULL)
 			return (linearSearch(start, stop, value));
 		start = stop;
-		stop = jump(step, start);
+		stop = jump(start);
 	}
 	return (NULL);
 }
@@ -36,26 +34,24 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 /**
  * jump - A function that jumps in a linked list
  * @from: the element to jump from
- * @step: the number of steps to jump
  * Return: return the pointer to the element that is jumped to
  * else return NULL
  */
-listint_t *jump(size_t step, listint_t *from)
+skiplist_t *jump(skiplist_t *from)
 {
-	listint_t *temp;
-	size_t count;
+	skiplist_t *temp;
 
 	temp = from;
-	count = 1;
-	if (temp == NULL)
-		return (NULL);
-	while (count <= step)
+	if (temp->express != NULL)
+		return (temp->express);
+	else
 	{
-		if (temp->next != NULL)
+		while (temp != NULL)
+		{
+			if (temp->next == NULL)
+				break;
 			temp = temp->next;
-		else
-			return (temp);
-		count++;
+		}
 	}
 	return (temp);
 }
@@ -68,9 +64,9 @@ listint_t *jump(size_t step, listint_t *from)
  * @value: the value to search for
  * Return: the pointer of the value or NULL
  */
-listint_t *linearSearch(listint_t *start, listint_t *stop, int value)
+skiplist_t *linearSearch(skiplist_t *start, skiplist_t *stop, int value)
 {
-	listint_t *temp;
+	skiplist_t *temp;
 
 	temp = start;
 	printf("Value found between indexes [%li] and [%li]\n", start->index,

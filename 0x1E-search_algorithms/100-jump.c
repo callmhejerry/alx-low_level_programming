@@ -1,4 +1,4 @@
-#include "search_algos.h"
+#include "../search_algos.h"
 
 
 int linearSearch(int *, size_t, size_t, int, size_t);

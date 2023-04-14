@@ -1,4 +1,4 @@
-#include "search_algos.h"
+#include "../search_algos.h"
 
 void print_search(size_t, size_t, int *);
 int recurBinarySearch(int *, size_t, size_t, int);

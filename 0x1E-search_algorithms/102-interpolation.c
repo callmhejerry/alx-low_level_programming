@@ -1,4 +1,4 @@
-#include "search_algos.h"
+#include "../search_algos.h"
 
 int recur_search(int *array, size_t start, size_t stop, int value);
 /**
