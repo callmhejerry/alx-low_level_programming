@@ -48,7 +48,7 @@ int linearSearch(int *array, size_t start, size_t stop, int value, size_t size)
 {
 	size_t i, end;
 
-	if (stop > size)
+	if (stop >= size)
 		end = size - 1;
 	else
 		end = stop;
